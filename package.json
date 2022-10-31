@@ -1,0 +1,77 @@
+{
+  "name": "my-feathers",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "keywords": [
+    "feathers"
+  ],
+  "author": {},
+  "contributors": [],
+  "bugs": {},
+  "engines": {
+    "node": ">= 18.12.0"
+  },
+  "feathers": {
+    "language": "ts",
+    "packager": "yarn",
+    "database": "mongodb",
+    "framework": "express",
+    "transports": [
+      "rest",
+      "websockets"
+    ],
+    "schema": "typebox"
+  },
+  "directories": {
+    "lib": "src",
+    "test": "test"
+  },
+  "main": "lib/client",
+  "scripts": {
+    "dev": "nodemon -x ts-node src/index.ts",
+    "compile": "shx rm -rf lib/ && tsc",
+    "start": "node lib/",
+    "prettier": "npx prettier \"**/*.ts\" --write",
+    "mocha": "cross-env NODE_ENV=test mocha test/ --require ts-node/register --recursive --extension .ts --exit",
+    "test": "npm run mocha"
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^5.0.0-pre.32",
+    "@feathersjs/authentication-client": "^5.0.0-pre.32",
+    "@feathersjs/authentication-local": "^5.0.0-pre.32",
+    "@feathersjs/authentication-oauth": "^5.0.0-pre.32",
+    "@feathersjs/configuration": "^5.0.0-pre.32",
+    "@feathersjs/errors": "^5.0.0-pre.32",
+    "@feathersjs/express": "^5.0.0-pre.32",
+    "@feathersjs/feathers": "^5.0.0-pre.32",
+    "@feathersjs/mongodb": "^5.0.0-pre.32",
+    "@feathersjs/schema": "^5.0.0-pre.32",
+    "@feathersjs/socketio": "^5.0.0-pre.32",
+    "@feathersjs/transport-commons": "^5.0.0-pre.32",
+    "@feathersjs/typebox": "^5.0.0-pre.32",
+    "compression": "^1.7.4",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.6.0",
+    "mongodb": "^4.11.0",
+    "mongoose": "^6.7.0",
+    "nodejs-book-modules": "^1.0.1",
+    "req-res-formatter": "^1.0.4",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@feathersjs/cli": "^5.0.0-pre.32",
+    "@feathersjs/rest-client": "^5.0.0-pre.32",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.7",
+    "axios": "^0.27.2",
+    "cross-env": "^7.0.3",
+    "mocha": "^10.1.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.7.1",
+    "shx": "^0.3.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}
